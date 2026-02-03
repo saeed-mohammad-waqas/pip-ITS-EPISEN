@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation ITS - Ingénieur en Technologies pour la Santé | EPISEN UPEC</title>
+    <meta name="description" content="Découvrez la formation ITS (Ingénieur en Technologies pour la Santé) de l'EPISEN, école d'ingénieurs de l'UPEC. Bac+5, spécialisation en e-santé et technologies connectées.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Chiron+Hei+HK:wght@400;700&family=Quattrocento+Sans:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <style>
+        :root {
+            --bg-color: #F7FAFC;
+            --primary-color: #3182CE;
+            --secondary-color: #4A5568;
+            --accent-color: #4FD1C5;
+            --text-dark: #2D3748;
+            --text-light: #F7FAFC;
+        }
+        
+        body {
+            font-family: 'Quattrocento Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Chiron Hei HK', sans-serif;
+        }
+        
+        /* Animation initial states */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .fade-in-left {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+        
+        .fade-in-right {
+            opacity: 0;
+            transform: translateX(30px);
+        }
+        
+        /* Fallback for no-js */
+        .no-js .fade-in-up,
+        .no-js .fade-in-left,
+        .no-js .fade-in-right {
+            opacity: 1;
+            transform: none;
+        }
+        
+        /* Hero background pattern */
+        .hero-bg {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #2C5282 100%);
+        }
+        
+        /* Card hover effects */
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        /* Navigation */
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--accent-color);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Responsive navigation */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Section spacing */
+        section {
+            padding: 80px 0;
+        }
+        
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">ITS</span>
+                    </div>
+                    <div>
+                        <div class="text-sm font-bold text-gray-800">EPISEN</div>
+                        <div class="text-xs text-gray-500">UPEC</div>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#accueil" class="nav-link text-sm font-medium text-gray-700">Accueil</a>
+                    <a href="#presentation" class="nav-link text-sm font-medium text-gray-700">Présentation</a>
+                    <a href="#objectifs" class="nav-link text-sm font-medium text-gray-700">Objectifs</a>
+                    <a href="#programme" class="nav-link text-sm font-medium text-gray-700">Programme</a>
+                    <a href="#stages" class="nav-link text-sm font-medium text-gray-700">Stages</a>
+                    <a href="#debouches" class="nav-link text-sm font-medium text-gray-700">Débouchés</a>
+                    <a href="#admission" class="nav-link text-sm font-medium text-gray-700">Admission</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden mobile-menu-btn">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div class="mobile-menu fixed top-16 right-0 w-64 h-screen bg-white shadow-lg md:hidden">
+            <div class="p-6 space-y-4">
+                <a href="#accueil" class="block text-gray-700 hover:text-blue-600 font-medium">Accueil</a>
+                <a href="#presentation" class="block text-gray-700 hover:text-blue-600 font-medium">Présentation</a>
+                <a href="#objectifs" class="block text-gray-700 hover:text-blue-600 font-medium">Objectifs</a>
+                <a href="#programme" class="block text-gray-700 hover:text-blue-600 font-medium">Programme</a>
+                <a href="#stages" class="block text-gray-700 hover:text-blue-600 font-medium">Stages</a>
+                <a href="#debouches" class="block text-gray-700 hover:text-blue-600 font-medium">Débouchés</a>
+                <a href="#admission" class="block text-gray-700 hover:text-blue-600 font-medium">Admission</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero-bg min-h-screen flex items-center pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-white">
+                    <h1 class="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                        Formation ITS
+                        <span class="block text-3xl lg:text-4xl font-normal mt-2 text-blue-200">
+                            Ingénieur en Technologies pour la Santé
+                        </span>
+                    </h1>
+                    <p class="text-xl mb-8 text-blue-100 leading-relaxed">
+                        Devenez expert en technologies numériques appliquées à la santé. Un diplôme d'ingénieur Bac+5 habilité CTI, préparant aux métiers de la e-santé et des technologies connectées.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#presentation" class="bg-teal-400 text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-teal-300 transition-colors text-center">
+                            Découvrir la formation
+                        </a>
+                        <a href="#admission" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors text-center">
+                            Comment candidater ?
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden lg:block">
+                    <div class="relative">
+                        <div class="w-full h-96 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 p-8">
+                            <div class="space-y-4">
+                                <div class="h-4 bg-white/20 rounded w-3/4"></div>
+                                <div class="h-4 bg-white/20 rounded w-1/2"></div>
+                                <div class="h-4 bg-white/20 rounded w-2/3"></div>
+                                <div class="mt-8 grid grid-cols-2 gap-4">
+                                    <div class="h-20 bg-white/20 rounded-lg"></div>
+                                    <div class="h-20 bg-white/20 rounded-lg"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Présentation Section -->
+    <section id="presentation" class="bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">Qu'est-ce que la formation ITS ?</h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto">
+                    La spécialité "Technologies pour la Santé" (ITS) est un cycle d'ingénieur en 3 ans (niveau Bac + 5) 
+                    délivré par l'EPISEN, école publique d'ingénieurs de l'Université Paris-Est Créteil.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="card-hover bg-blue-50 p-8 rounded-xl text-center">
+                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Diplôme Habilité CTI</h3>
+                    <p class="text-gray-600">Certification nationale reconnue par la Commission des Titres d'Ingénieur</p>
+                </div>
+                
+                <div class="card-hover bg-teal-50 p-8 rounded-xl text-center">
+                    <div class="w-16 h-16 bg-teal-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Technologies de Pointe</h3>
+                    <p class="text-gray-600">IoT, intelligence artificielle, cloud, big data appliqués à la santé</p>
+                </div>
+                
+                <div class="card-hover bg-gray-100 p-8 rounded-xl text-center">
+                    <div class="w-16 h-16 bg-gray-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Double Compétence</h3>
+                    <p class="text-gray-600">Expertise à la croisée des technologies numériques et du domaine de la santé</p>
+                </div>
+            </div>
+            
+            <div class="bg-gradient-to-r from-blue-600 to-teal-500 rounded-2xl p-8 lg:p-12 text-white">
+                <div class="max-w-4xl">
+                    <h3 class="text-3xl font-bold mb-6">Objectif de la formation</h3>
+                    <p class="text-lg mb-6 text-blue-100">
+                        Former des ingénieurs experts capables de concevoir, déployer et sécuriser des systèmes informatiques 
+                        et réseaux dans le contexte des technologies de santé connectée.
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold mb-2">🎯 Compétences techniques</h4>
+                            <p class="text-blue-100 text-sm">Réseaux télécoms, sécurité des données, IoT, cloud computing, traitement de données massives</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">🚀 Applications pratiques</h4>
+                            <p class="text-blue-100 text-sm">E-santé, télémédecine, objets intelligents, systèmes embarqués, interfaces utilisateur</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Objectifs Section -->
+    <section id="objectifs" class="bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">Objectifs et Compétences</h2>
+                <p class="text-xl text-gray-600">Ce que vous serez capable de faire après la formation</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Objectifs -->
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-8">🎯 Objectifs pédagogiques</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-white font-bold text-sm">1</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Concevoir des systèmes de santé connectée</h4>
+                                <p class="text-gray-600 text-sm">Capacité à développer des solutions innovantes alliant technologie et santé</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-white font-bold text-sm">2</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Déployer et sécuriser des infrastructures</h4>
+                                <p class="text-gray-600 text-sm">Mise en place de réseaux et systèmes sécurisés pour le secteur médical</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-white font-bold text-sm">3</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Exploiter les outils numériques avancés</h4>
+                                <p class="text-gray-600 text-sm">Maîtrise de l'IA, IoT, cloud et big data appliqués à la santé</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-white font-bold text-sm">4</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Développer des objets intelligents</h4>
+                                <p class="text-gray-600 text-sm">Création de dispositifs médicaux et interfaces utilisateur innovants</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Compétences -->
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-8">🧠 Compétences clés acquises</h3>
+                    <div class="bg-white rounded-xl p-6 shadow-sm">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="skill-item">
+                                <div class="flex items-center mb-2">
+                                    <div class="w-3 h-3 bg-teal-500 rounded-full mr-3"></div>
+                                    <span class="font-semibold text-gray-900">Réseaux télécoms</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-teal-500 h-2 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="flex items-center mb-2">
+                                    <div class="w-3 h-3 bg-blue-600 rounded-full mr-3"></div>
+                                    <span class="font-semibold text-gray-900">Sécurité des systèmes</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="flex items-center mb-2">
+                                    <div class="w-3 h-3 bg-teal-500 rounded-full mr-3"></div>
+                                    <span class="font-semibold text-gray-900">IoT & Cloud</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-teal-500 h-2 rounded-full" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="flex items-center mb-2">
+                                    <div class="w-3 h-3 bg-blue-600 rounded-full mr-3"></div>
+                                    <span class="font-semibold text-gray-900">Big Data & IA</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="flex items-center mb-2">
+                                    <div class="w-3 h-3 bg-teal-500 rounded-full mr-3"></div>
+                                    <span class="font-semibold text-gray-900">E-santé</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-teal-500 h-2 rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="flex items-center mb-2">
+                                    <div class="w-3 h-3 bg-blue-600 rounded-full mr-3"></div>
+                                    <span class="font-semibold text-gray-900">Développement web/mobile</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 70%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programme Section -->
+    <section id="programme" class="bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">Contenu de la Formation</h2>
+                <p class="text-xl text-gray-600">Un programme équilibré entre théorie et pratique</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <div class="card-hover bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl">
+                    <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Technologies Spécialisées</h3>
+                    <p class="text-gray-600 text-sm mb-3">Réseaux, systèmes intelligents, IoT, cloud, sécurité</p>
+                    <div class="text-xs text-blue-600 font-semibold">70% du programme</div>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-teal-50 to-teal-100 p-6 rounded-xl">
+                    <div class="w-12 h-12 bg-teal-500 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Communication & Management</h3>
+                    <p class="text-gray-600 text-sm mb-3">Anglais, gestion de projet, communication professionnelle</p>
+                    <div class="text-xs text-teal-600 font-semibold">20% du programme</div>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl">
+                    <div class="w-12 h-12 bg-gray-600 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Fondamentaux Scientifiques</h3>
+                    <p class="text-gray-600 text-sm mb-3">Sciences de l'ingénieur, mathématiques, physique</p>
+                    <div class="text-xs text-gray-600 font-semibold">10% du programme</div>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-blue-50 to-teal-50 p-6 rounded-xl">
+                    <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-teal-500 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Projets Pratiques</h3>
+                    <p class="text-gray-600 text-sm mb-3">Mise en situation réelle et projets d'innovation</p>
+                    <div class="text-xs text-blue-600 font-semibold">30% pratique</div>
+                </div>
+            </div>
+            
+            <!-- Répartition -->
+            <div class="bg-gray-50 rounded-2xl p-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Répartition des enseignements</h3>
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="font-medium text-gray-700">Enseignements théoriques</span>
+                                <span class="font-bold text-blue-600">70%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-blue-600 h-3 rounded-full" style="width: 70%"></div>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <span class="font-medium text-gray-700">Projets et travaux pratiques</span>
+                                <span class="font-bold text-teal-500">30%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-teal-500 h-3 rounded-full" style="width: 30%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-6xl font-bold text-blue-600 mb-2">3 ans</div>
+                        <p class="text-gray-600">de formation intensive</p>
+                        <p class="text-sm text-gray-500 mt-2">Bac + 5 | Diplôme d'ingénieur</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stages Section -->
+    <section id="stages" class="bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">Stages et Expérience Professionnelle</h2>
+                <p class="text-xl text-gray-600">Une formation ancrée dans la réalité professionnelle</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <!-- 1ère année -->
+                <div class="card-hover bg-white rounded-xl p-8 shadow-sm border-t-4 border-blue-600">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl font-bold text-blue-600">1</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">1ʳᵉ année</h3>
+                        <p class="text-gray-600">Stage de découverte</p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600">6</div>
+                            <div class="text-sm text-gray-600">semaines</div>
+                        </div>
+                        
+                        <div class="border-t pt-4">
+                            <h4 class="font-semibold text-gray-900 mb-2">Objectifs</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Découverte du milieu professionnel</li>
+                                <li>• Première approche des métiers</li>
+                                <li>• Observation des pratiques</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 2ème année -->
+                <div class="card-hover bg-white rounded-xl p-8 shadow-sm border-t-4 border-teal-500">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl font-bold text-teal-500">2</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">2ᵉ année</h3>
+                        <p class="text-gray-600">Projet ou stage à l'étranger</p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-teal-500">14</div>
+                            <div class="text-sm text-gray-600">semaines</div>
+                        </div>
+                        
+                        <div class="border-t pt-4">
+                            <h4 class="font-semibold text-gray-900 mb-2">Objectifs</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Approfondissement technique</li>
+                                <li>• Ouverture internationale</li>
+                                <li>• Responsabilités opérationnelles</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 3ème année -->
+                <div class="card-hover bg-white rounded-xl p-8 shadow-sm border-t-4 border-gray-600">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl font-bold text-gray-600">3</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">3ᵉ année</h3>
+                        <p class="text-gray-600">Stage de fin d'études</p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-gray-600">24</div>
+                            <div class="text-sm text-gray-600">semaines</div>
+                        </div>
+                        
+                        <div class="border-t pt-4">
+                            <h4 class="font-semibold text-gray-900 mb-2">Objectifs</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Projet d'envergure</li>
+                                <li>• Responsabilités importantes</li>
+                                <li>• Préparation à l'insertion</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Alternance -->
+            <div class="bg-gradient-to-r from-blue-600 to-teal-500 rounded-2xl p-8 lg:p-12 text-white">
+                <div class="grid lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-3xl font-bold mb-4">Formation en apprentissage</h3>
+                        <p class="text-blue-100 mb-6">
+                            La formation ITS peut être suivie en apprentissage avec un contrat en entreprise, 
+                            facilitant ainsi l'insertion professionnelle et le financement des études.
+                        </p>
+                        <div class="space-y-3">
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 mr-3 text-teal-300" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Contrat de professionnalisation ou d'apprentissage</span>
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 mr-3 text-teal-300" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Alternance entre l'entreprise et l'école</span>
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 mr-3 text-teal-300" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Expérience professionnelle dès la 1ʳᵉ année</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-white/20 backdrop-blur-sm rounded-xl p-8">
+                            <div class="text-5xl font-bold mb-2">100%</div>
+                            <p class="text-blue-100 mb-4">des diplômés en apprentissage trouvent un emploi dans les 6 mois</p>
+                            <a href="#admission" class="inline-block bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+                                En savoir plus
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Débouchés Section -->
+    <section id="debouches" class="bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">Insertion Professionnelle</h2>
+                <p class="text-xl text-gray-600">Des débouchés variés dans un secteur en pleine expansion</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <div class="card-hover bg-blue-50 rounded-xl p-6">
+                    <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Ingénieur R&D</h3>
+                    <p class="text-gray-600 text-sm mb-3">Recherche et développement de nouvelles technologies médicales</p>
+                    <div class="text-xs text-blue-600 font-semibold">Secteur : Industrie médicale</div>
+                </div>
+                
+                <div class="card-hover bg-teal-50 rounded-xl p-6">
+                    <div class="w-12 h-12 bg-teal-500 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Chef de projet e-santé</h3>
+                    <p class="text-gray-600 text-sm mb-3">Pilotage de projets numériques dans le secteur de la santé</p>
+                    <div class="text-xs text-teal-600 font-semibold">Secteur : Services numériques</div>
+                </div>
+                
+                <div class="card-hover bg-gray-100 rounded-xl p-6">
+                    <div class="w-12 h-12 bg-gray-600 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Consultant en e-santé</h3>
+                    <p class="text-gray-600 text-sm mb-3">Conseil et accompagnement des établissements de santé</p>
+                    <div class="text-xs text-gray-600 font-semibold">Secteur : Conseil</div>
+                </div>
+                
+                <div class="card-hover bg-blue-50 rounded-xl p-6">
+                    <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Expert en cybersécurité santé</h3>
+                    <p class="text-gray-600 text-sm mb-3">Protection des données et infrastructures médicales</p>
+                    <div class="text-xs text-blue-600 font-semibold">Secteur : Cybersécurité</div>
+                </div>
+                
+                <div class="card-hover bg-teal-50 rounded-xl p-6">
+                    <div class="w-12 h-12 bg-teal-500 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Responsable informatique</h3>
+                    <p class="text-gray-600 text-sm mb-3">Direction des systèmes d'information dans les hôpitaux</p>
+                    <div class="text-xs text-teal-600 font-semibold">Secteur : Établissements de soins</div>
+                </div>
+                
+                <div class="card-hover bg-gray-100 rounded-xl p-6">
+                    <div class="w-12 h-12 bg-gray-600 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Ingénieur d'études</h3>
+                    <p class="text-gray-600 text-sm mb-3">Études et développement dans les entreprises tech</p>
+                    <div class="text-xs text-gray-600 font-semibold">Secteur : Tech & Innovation</div>
+                </div>
+            </div>
+            
+            <!-- Stats insertion -->
+            <div class="bg-gradient-to-r from-blue-600 to-teal-500 rounded-2xl p-8 lg:p-12 text-white text-center">
+                <h3 class="text-3xl font-bold mb-8">Insertion professionnelle</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div>
+                        <div class="text-5xl font-bold mb-2">95%</div>
+                        <p class="text-blue-100">de diplômés trouvent un emploi dans les 6 mois</p>
+                    </div>
+                    <div>
+                        <div class="text-5xl font-bold mb-2">€45k</div>
+                        <p class="text-blue-100">salaire moyen à l'embauche</p>
+                    </div>
+                    <div>
+                        <div class="text-5xl font-bold mb-2">+15%</div>
+                        <p class="text-blue-100">évolution du secteur e-santé/an</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Section -->
+    <section id="admission" class="bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">Modalités d'Admission</h2>
+                <p class="text-xl text-gray-600">Plusieurs voies d'accès pour intégrer la formation ITS</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="card-hover bg-white rounded-xl p-8 shadow-sm">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Concours après CPGE</h3>
+                    <div class="space-y-3 text-sm text-gray-600">
+                        <p><strong>Pour :</strong> Étudiants de classes préparatoires aux grandes écoles</p>
+                        <p><strong>Déroulement :</strong> Épreuves écrites et orales</p>
+                        <p><strong>Période :</strong> Mai - Juillet</p>
+                        <p><strong>Avantage :</strong> Accès direct en 1ʳᵉ année</p>
+                    </div>
+                    <div class="mt-6 text-center">
+                        <span class="inline-block bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-xs font-semibold">Via Ecoles2santé</span>
+                    </div>
+                </div>
+                
+                <div class="card-hover bg-white rounded-xl p-8 shadow-sm">
+                    <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Admission sur titres</h3>
+                    <div class="space-y-3 text-sm text-gray-600">
+                        <p><strong>Pour :</strong> Détenteurs de DUT, BUT, BTS, Licence</p>
+                        <p><strong>Déroulement :</strong> Dossier + entretien</p>
+                        <p><strong>Période :</strong> Avril - Juin</p>
+                        <p><strong>Avantage :</strong> Validation des acquis</p>
+                    </div>
+                    <div class="mt-6 text-center">
+                        <span class="inline-block bg-teal-100 text-teal-600 px-3 py-1 rounded-full text-xs font-semibold">Équivalence niveau L2</span>
+                    </div>
+                </div>
+                
+                <div class="card-hover bg-white rounded-xl p-8 shadow-sm">
+                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2V6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Contrat d'apprentissage</h3>
+                    <div class="space-y-3 text-sm text-gray-600">
+                        <p><strong>Pour :</strong> Candidats avec promesse d'embauche</p>
+                        <p><strong>Déroulement :</strong> Contrat + dossier</p>
+                        <p><strong>Période :</strong> Toute l'année</p>
+                        <p><strong>Avantage :</strong> Formation financée + salaire</p>
+                    </div>
+                    <div class="mt-6 text-center">
+                        <span class="inline-block bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs font-semibold">Alternance possible</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Processus -->
+            <div class="bg-white rounded-2xl p-8 lg:p-12">
+                <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">Processus de candidature</h3>
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white font-bold text-xl">1</span>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Candidature en ligne</h4>
+                        <p class="text-sm text-gray-600">Dépôt du dossier sur le site de l'EPISEN</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-teal-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white font-bold text-xl">2</span>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Étude du dossier</h4>
+                        <p class="text-sm text-gray-600">Vérification des prérequis et des diplômes</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white font-bold text-xl">3</span>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Entretien</h4>
+                        <p class="text-sm text-gray-600">Évaluation des motivations et compétences</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-teal-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white font-bold text-xl">4</span>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Inscription</h4>
+                        <p class="text-sm text-gray-600">Confirmation de l'admission et inscription</p>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <a href="https://episen.u-pec.fr/admissions" target="_blank" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                        Candidater maintenant
+                    </a>
+                    <p class="text-sm text-gray-500 mt-4">Informations et candidature sur <a href="https://episen.u-pec.fr" target="_blank" class="text-blue-600 hover:underline">episen.u-pec.fr</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Résumé Section -->
+    <section id="resume" class="bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">En Résumé</h2>
+                <p class="text-xl text-gray-600">Les points clés de la formation ITS</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900">Diplôme reconnu</h3>
+                                <p class="text-gray-600">Habilité CTI, enregistré au RNCP niveau 7</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-teal-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900">Durée : 3 ans</h3>
+                                <p class="text-gray-600">Niveau Bac + 5, 180 ECTS</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900">Lieu : Créteil / Vitry</h3>
+                                <p class="text-gray-600">Île-de-France, Campus moderne</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-teal-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900">Alternance possible</h3>
+                                <p class="text-gray-600">Formation initiale ou apprentissage</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-blue-600 to-teal-500 rounded-2xl p-8 text-white">
+                    <h3 class="text-2xl font-bold mb-6">Pourquoi choisir ITS ?</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <svg class="w-5 h-5 mr-3 text-teal-300 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Double compétence tech et santé très demandée</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-5 h-5 mr-3 text-teal-300 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Stages et projets pratiques dès la 1ʳᵉ année</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-5 h-5 mr-3 text-teal-300 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Secteur en pleine expansion (e-santé)</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-5 h-5 mr-3 text-teal-300 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Insertion professionnelle rapide (95% à 6 mois)</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-5 h-5 mr-3 text-teal-300 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Ouverture internationale et mobilité</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Call to action -->
+            <div class="bg-gray-900 rounded-2xl p-8 lg:p-12 text-white text-center">
+                <h3 class="text-3xl font-bold mb-4">Prêt à devenir ingénieur en technologies pour la santé ?</h3>
+                <p class="text-gray-300 mb-8 text-lg">
+                    Rejoignez une formation d'excellence au cœur de l'innovation médicale et numérique
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://episen.u-pec.fr/admissions" target="_blank" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                        Candidater dès maintenant
+                    </a>
+                    <a href="https://episen.u-pec.fr" target="_blank" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors">
+                        Visiter le site EPISEN
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-lg">ITS</span>
+                        </div>
+                        <div>
+                            <div class="font-bold">EPISEN</div>
+                            <div class="text-sm text-gray-400">UPEC</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        École publique d'ingénieurs de la santé et du numérique
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <div class="space-y-2 text-sm text-gray-400">
+                        <p>Université Paris-Est Créteil</p>
+                        <p>61 avenue du Général de Gaulle</p>
+                        <p>94010 Créteil Cedex</p>
+                        <p>Tél : +33 1 45 17 16 00</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Liens utiles</h4>
+                    <div class="space-y-2 text-sm">
+                        <p><a href="https://episen.u-pec.fr" target="_blank" class="text-gray-400 hover:text-white transition-colors">Site EPISEN</a></p>
+                        <p><a href="https://www.u-pec.fr" target="_blank" class="text-gray-400 hover:text-white transition-colors">Site UPEC</a></p>
+                        <p><a href="https://episen.u-pec.fr/admissions" target="_blank" class="text-gray-400 hover:text-white transition-colors">Candidater</a></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; 2024 EPISEN - Université Paris-Est Créteil. Tous droits réséservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileLinks = document.querySelectorAll('.mobile-menu a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+        
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80; // Account for fixed nav
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Active navigation highlighting
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Initialize GSAP animations if available
+        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+            gsap.registerPlugin(ScrollTrigger);
+            
+            // Fade in up animation
+            gsap.utils.toArray('.fade-in-up').forEach(element => {
+                gsap.fromTo(element, 
+                    { opacity: 0, y: 30 },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.8,
+                        ease: 'power2.out',
+                        scrollTrigger: {
+                            trigger: element,
+                            start: 'top 95%',
+                            toggleActions: 'play none none reverse'
+                        }
+                    }
+                );
+            });
+            
+            // Fade in left animation
+            gsap.utils.toArray('.fade-in-left').forEach(element => {
+                gsap.fromTo(element, 
+                    { opacity: 0, x: -30 },
+                    {
+                        opacity: 1,
+                        x: 0,
+                        duration: 0.8,
+                        ease: 'power2.out',
+                        scrollTrigger: {
+                            trigger: element,
+                            start: 'top 95%',
+                            toggleActions: 'play none none reverse'
+                        }
+                    }
+                );
+            });
+            
+            // Fade in right animation
+            gsap.utils.toArray('.fade-in-right').forEach(element => {
+                gsap.fromTo(element, 
+                    { opacity: 0, x: 30 },
+                    {
+                        opacity: 1,
+                        x: 0,
+                        duration: 0.8,
+                        ease: 'power2.out',
+                        scrollTrigger: {
+                            trigger: element,
+                            start: 'top 95%',
+                            toggleActions: 'play none none reverse'
+                        }
+                    }
+                );
+            });
+        }
+    </script>
+</body>
+</html>
